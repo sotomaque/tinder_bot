@@ -16,13 +16,12 @@ class TinderBot():
             sleep(2)
         except Exception:
             print('Error accessing base url', Exception)
-        
-
+        578413
 
     def loginWithPhoneNumber(self):
         try:
             # select login option (phone number)
-            phoneLogin = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/div[1]/button')
+            phoneLogin = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/span/div[1]/button')
             phoneLogin.click()
 
             # 2 seconds for page load
@@ -73,15 +72,13 @@ class TinderBot():
     def login(self):
         self.goToBaseSite()
         self.loginWithPhoneNumber()
-        
-        self.handle_popups_after_login()
+        # self.handle_popups_after_login()
 
     
     def like(self):
-        like_btn = bot.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]')
+        like_btn = bot.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[4]/button')
         like_btn.click()
-
-        
+      
     def dislike(self):
         dislike_btn = bot.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[1]')
         dislike_btn.click()
